@@ -1,0 +1,9 @@
+SELECT PR.sku, PR.product_name
+
+FROM PRODUCT AS PR
+
+LEFT OUTER JOIN INVOICE_ITEM AS II ON PR.id = II.product_id
+
+WHERE II.invoice_id IS NULL
+
+ORDER BY PR.sku ASC;
